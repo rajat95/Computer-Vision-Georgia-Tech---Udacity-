@@ -1,6 +1,6 @@
 function[ ] = lucas_kanade()
     img1 = im2double(imread(fullfile('G:\ps5\input\TestSeq','shift0.png')));
-    img2 =  im2double(imread(fullfile('G:\ps5\input\TestSeq','shiftR2.png')));
+    img2 =  im2double(imread(fullfile('G:\ps5\input\TestSeq','shiftR10.png')));
     G = fspecial('gaussian',[5 5],1.5);
     img1 = imfilter(img1,G);
     img2 = imfilter(img2,G);
@@ -11,7 +11,7 @@ function[ ] = lucas_kanade()
     gx_sq = gx.*gx;
     gy_sq = gy.*gy;
     g_xy = gx.*gy;
-    filter = ones(5,5);
+    filter = ones(7,7);
     prod_x = -1.0*gx.*diff;
     prod_y = -1.0*gy.*diff;
     val1 = im2double(imfilter(gx_sq,filter));
